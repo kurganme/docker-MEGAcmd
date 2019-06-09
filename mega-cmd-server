@@ -1,0 +1,4 @@
+#!/bin/sh
+set -ue
+export LD_LIBRARY_PATH="$(dirname "$(readlink -f "$0")")"/mega.d
+exec "$LD_LIBRARY_PATH"/ld-linux-x86-64.so.2 "$LD_LIBRARY_PATH"/mega-cmd-server "$@"
